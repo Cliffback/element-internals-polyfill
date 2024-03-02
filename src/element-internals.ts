@@ -212,9 +212,9 @@ export class ElementInternals implements IElementInternals {
     delete check.valid;
     const { valid } = reconcileValidity(validity, check, this.form);
 
-    if (!valid && !validationMessage) {
-      throw new DOMException(`Failed to execute 'setValidity' on 'ElementInternals': The second argument should not be empty if one or more flags in the first argument are true.`);
-    }
+    // if (!valid && !validationMessage) {
+    //   throw new DOMException(`Failed to execute 'setValidity' on 'ElementInternals': The second argument should not be empty if one or more flags in the first argument are true.`);
+    // }
     validationMessageMap.set(this, valid ? '' : validationMessage);
 
     // check to make sure the host element is connected before adding attributes
