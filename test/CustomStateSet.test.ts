@@ -91,6 +91,7 @@ describe('CustomStateSet polyfill', () => {
 
     if (window.CustomStateSet.isPolyfilled) {
       await aTimeout(100);
+      expect(el.matches('[state--foo]')).to.be.true;
       expect(el.internals.states.has('--foo')).to.be.true;
     } else {
       expect(el.internals.states.has('--foo')).to.be.true;
@@ -106,6 +107,7 @@ describe('CustomStateSet polyfill', () => {
     if (window.CustomStateSet.isPolyfilled) {
       await aTimeout(100);
       expect(el.matches('[state--foo]')).to.be.false;
+      expect(el.internals.states.has('--foo')).to.be.false;
     } else {
       expect(el.internals.states.has('--foo')).to.be.false;
     }
